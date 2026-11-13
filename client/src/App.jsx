@@ -6,12 +6,14 @@ import Counter from "./components/Counter";
 import Todo from "./components/Todo";
 import Stopwatch from "./components/Stopwatch";
 import WindowWidth from "./components/WindowWidth";
+import UserProfilePage from "./pages/UserProfilePage";
 
 function App() {
   const [show, setShow] = useState(true);
   return (
     <div className="thin-scrollbar bg-slate-600 text-white h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
       <Navbar />
+      <UserProfilePage />
       <section className="sticky-pages">
         <WindowWidth />
       </section>

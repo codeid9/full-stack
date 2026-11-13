@@ -20,7 +20,7 @@ const createUser = async (req, res) => {
 
 const getUserById = async (req, res) => {
   try {
-    const user = await User.findById(req.param.id);
+    const user = await User.findById(req.params.id);
     if (!user) return res.status(404).json({ error: "User not found:(" });
     res.status(200).json(user);
   } catch (err) {
