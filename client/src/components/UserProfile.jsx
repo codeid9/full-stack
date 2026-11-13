@@ -24,6 +24,7 @@ function UserProfile({ userId }) {
       })
       .catch((err) => {
         if (err.name === "AbortError") return;
+        setLoading(false);
         console.error(err);
         setError(err.message);
       });

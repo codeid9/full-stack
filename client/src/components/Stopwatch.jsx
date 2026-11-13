@@ -1,18 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Stopwatch() {
   const [seconds, setSeconds] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
-
+  const intervalRef = useRef(null);
   useEffect(() => {
     if (!isRunning) return;
 
-    const id = setInterval(() => {
+    intervalRef.current = setInterval(() => {
       setSeconds((s) => s + 1);
     }, 1000);
-
     return () => {
-      clearInterval(id);
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
     };
   }, [isRunning]);
 

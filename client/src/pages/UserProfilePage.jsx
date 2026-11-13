@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import UserProfile from "../components/UserProfile";
 
 function UserProfilePage() {
   const [userId, setUserId] = useState("");
   const [inputValue, setInputValue] = useState("");
+  const inputRef = useRef(null);
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
   function handleSubmit(e) {
     e.preventDefault();
     setUserId(inputValue.trim());
@@ -17,6 +21,7 @@ function UserProfilePage() {
             type="text"
             placeholder="Enter UserID"
             value={inputValue}
+            ref={inputRef}
             onChange={(e) => setInputValue(e.target.value)}
             className="text-gray-800"
           />
