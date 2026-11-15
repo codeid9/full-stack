@@ -21,7 +21,7 @@ function Todo() {
     setTodos((prev) => prev.filter((t) => t.id !== id));
   }
   return (
-    <section className="sticky-pages p-4">
+    <section className="page p-4">
       <div className="text-center h-full w-full md:w-9/12">
         <h1 className="text-2xl pb-4">Todo App </h1>
         <ul className="p-4 flex flex-col gap-2 bg-gray-700 h-5/6 overflow-y-auto thin-scrollbar">

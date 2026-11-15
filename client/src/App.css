@@ -28,8 +28,17 @@
   .thin-scrollbar::-webkit-scrollbar-track {
     background: transparent;
   }
-  .sticky-pages {
-    @apply h-screen snap-center flex items-center justify-center pt-12;
+
+  .hide-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE, Edge */
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+  .page {
+    @apply h-screen snap-center flex items-center justify-center;
   }
   .btn {
     @apply px-2 rounded text-sm;

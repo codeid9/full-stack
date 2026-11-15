@@ -4,24 +4,20 @@ import UserProfile from "../components/UserProfile";
 function UserProfilePage() {
   const [userId, setUserId] = useState("");
   const [inputValue, setInputValue] = useState("");
-  const inputRef = useRef(null);
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
+
   function handleSubmit(e) {
     e.preventDefault();
     setUserId(inputValue.trim());
     setInputValue("");
   }
   return (
-    <section className="sticky-pages ">
+    <section className="page">
       <div className="flex flex-col gap-8 self-start pt-4">
         <form onSubmit={handleSubmit} className="flex flex-col gap-3 bg-slate-500 p-3">
           <input
             type="text"
             placeholder="Enter UserID"
             value={inputValue}
-            ref={inputRef}
             onChange={(e) => setInputValue(e.target.value)}
             className="text-gray-800"
           />

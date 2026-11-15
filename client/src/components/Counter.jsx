@@ -7,7 +7,7 @@ function Counter() {
     prevRef.current = user.age;
   }, [user.age]);
   return (
-    <section className="sticky-pages">
+    <section className="page">
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="bg-slate-500 p-4 rounded">
           <h1>hi,</h1>
